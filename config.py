@@ -9,7 +9,7 @@ from datetime import timedelta
 load_dotenv()
 print(os.getenv('DATABASE_URL'))
 
-class config:
+class Config:
     #database
     SQLALCHEMY_DATABASE_URI =os.getenv('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS=False
