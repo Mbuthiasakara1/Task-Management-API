@@ -11,6 +11,10 @@ class Attachment(db.Model):
     file_size = db.Column(db.Integer, nullable=False)
     content_type = db.Column(db.String(100), nullable=False)
     uploaded_at = db.Column(db.DateTime, server_default=db.func.now())
+
+
+    # Relationship
+    task = db.relationship('Task', back_populates='attachments')
     
     def __repr__(self):
         return f"<Attachment {self.filename} for Task {self.task_id}>"

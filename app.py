@@ -27,8 +27,9 @@ def create_app():
     migrate.init_app(app,db)
 
 
-    # Register blueprints (routes) - we'll add these next
-    # from routes.auth import auth_bp
+    # Register blueprints (routes) 
+    from routes.auth import auth_bp
+    app.register_blueprint(auth_bp)
     # from routes.tasks import tasks_bp
     # app.register_blueprint(auth_bp)
     # app.register_blueprint(tasks_bp)
